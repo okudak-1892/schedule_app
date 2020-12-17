@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta http-equiv="content-type" 
+    content="text/html; charset=UTF-8">
+  <title>スケジュール管理アプリ</title>
+  <link rel="stylesheet" 
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  crossorigin="anonymous">
+  <link rel='stylesheet' 
+    href='/stylesheets/style.css' />
+</head>
+
+<body class="container">
+  <header>
+    <h1 class="display-4">スケジュールの削除</h1>
+  </header>
+  <div role="main">
+    <table class="table">
+      <tr>
+        <th>開始日時</th>
+        <td><%= form.begin.toLocaleString() %></td>
+      </tr>
+      <tr>
+        <th>終了日時</th>
+        <td><%= form.end.toLocaleString() %></td>
+      </tr>
+      <tr>
+        <th>場所</th>
+        <td><%= form.place %></td>
+      </tr>
+      <tr>
+        <th>内容</th>
+        <td><%= form.content %></td>
+      </tr>
+      <tr>
+        <th></th>
+        <td></td>
+      </tr>
+    </table>
+    <form method="post" action="/sche/delete">
+      <input type="hidden" name="id" value="<%= form.id %>">
+      <input type="submit" value="削除" class="btn btn-primary">
+    </form>
+    <p class="mt-4"><a href="/sche">&lt;&lt; Top へ戻る</a>
+  </div>
+</body>
+
+</html>

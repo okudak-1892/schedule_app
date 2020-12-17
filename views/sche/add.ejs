@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="content-type"
+        content="text/html; charset=UTF-8">
+    <title>スケジュール管理アプリ</title>
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+
+<body class="container">
+
+  <header>
+    <h1 class="display-4 text-primary">
+      スケジュールの追加</h1>
+  </header>
+  <div role="main">
+    <form method="post" action="/sche/add">
+      <div class="form-group">
+        <label>開始日時</label>
+        <input type="datetime" name="begin" id="begin" 
+          class="form-control">
+      </div>
+      <div class="form-group">
+        <label>終了日時</label>
+        <input type="datetime" name="end" id="end" 
+          class="form-control">
+      </div>
+      <div class="form-group">
+        <label>場所</label>
+        <textarea name="place" id="place" rows="10" 
+          class="form-control"></textarea>
+      </div>
+      <div class="form-group">
+        <label>内容</label>
+        <textarea name="content" id="content" rows="10" 
+          class="form-control"></textarea>
+      </div>
+      <input type="submit" value="送信" 
+        class="btn btn-primary">
+    </form>
+    <p class="mt-4"><a href="/sche">&lt;&lt; Top へ戻る</a>
+  </div>
+</body>
+
+</html>

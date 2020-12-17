@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="content-type"
+        content="text/html; charset=UTF-8">
+    <title>スケジュール管理アプリ</title>
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+
+<body class="container">
+  <header>
+    <h1 class="display-4 text-primary">スケジュール一覧</h1>
+      
+  </header>
+  <div role="main">
+    <p class="h5 my-4">
+      <span><%= login.name %></span>さん
+      <br>ようこそ スケジュール管理アプリへ.</p><br>
+    <table class="table">
+      <h2>  開始日時  ||   終了日時  ||  場所  ||  内容  </h2>
+      <% for (var i in content) { %>
+      <% var ob = content[i]; %>
+      <tr>
+        <td>
+            <%=ob.begin.toLocaleString()%>  ||
+            <%=ob.end.toLocaleString()%>  ||
+            <%=ob.place %>  ||
+            <%=ob.content %>  
+            <p><a href="/sche/edit?id=<%=ob.id %> ">編集 </a><a href="/sche/delete?id=<%=ob.id %> ">削除</a></p>
+        </td>
+      </tr>
+      <% } %>
+    </table>
+    <p> </p>
+    <p><a href="/sche/add">スケジュールを追加</a></p>
+  </div>
+</body>
+
+</html>

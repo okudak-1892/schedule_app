@@ -22,7 +22,7 @@ function check(req,res) {
       where:{userId: req.session.login.id},
       limit:pnum,
       order: [
-        ['createdAt', 'DESC']
+        ['begin', 'ASC']
       ]
     }).then(sche=> {
       var data = {
